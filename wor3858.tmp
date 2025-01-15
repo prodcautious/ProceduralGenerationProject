@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://kbmj75le2p4p"]
+
+[ext_resource type="Script" path="res://tilemap_procedural_generation.gd" id="1_7j278"]
+[ext_resource type="Texture2D" uid="uid://byhrn8y7ft4b4" path="res://assets/tileset.png" id="2_taka3"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pgyh5"]
+texture = ExtResource("2_taka3")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_v6dp1"]
+sources/0 = SubResource("TileSetAtlasSource_pgyh5")
+
+[node name="World" type="Node2D"]
+
+[node name="TilemapLayerHolder" type="Node2D" parent="."]
+script = ExtResource("1_7j278")
+
+[node name="Ground" type="TileMapLayer" parent="TilemapLayerHolder"]
+tile_set = SubResource("TileSet_v6dp1")
+
+[node name="Objects" type="TileMapLayer" parent="TilemapLayerHolder"]

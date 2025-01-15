@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://kbmj75le2p4p"]
+
+[ext_resource type="Script" path="res://tilemap_procedural_generation.gd" id="1_7j278"]
+[ext_resource type="TileSet" uid="uid://drkoaldem6o5q" path="res://world_tileset.tres" id="2_1skqv"]
+
+[node name="World" type="Node2D"]
+
+[node name="TilemapLayerHolder" type="Node2D" parent="."]
+script = ExtResource("1_7j278")
+
+[node name="Ground" type="TileMapLayer" parent="TilemapLayerHolder"]
+tile_set = ExtResource("2_1skqv")
+
+[node name="Objects" type="TileMapLayer" parent="TilemapLayerHolder"]
+z_index = 1
+tile_set = ExtResource("2_1skqv")
