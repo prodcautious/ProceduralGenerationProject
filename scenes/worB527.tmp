@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://kbmj75le2p4p"]
+
+[ext_resource type="Script" path="res://scripts/procedural_generation/tilemap_procedural_generation.gd" id="1_2fe4s"]
+[ext_resource type="TileSet" uid="uid://drkoaldem6o5q" path="res://resources/world_tileset.tres" id="2_q4rjl"]
+[ext_resource type="PackedScene" uid="uid://bvb7hdwfsdd5x" path="res://scenes/villagers/villager.tscn" id="3_jemdr"]
+
+[node name="World" type="Node2D"]
+y_sort_enabled = true
+
+[node name="TilemapLayerHolder" type="Node2D" parent="."]
+y_sort_enabled = true
+script = ExtResource("1_2fe4s")
+villager_scene = ExtResource("3_jemdr")
+
+[node name="Ground" type="TileMapLayer" parent="TilemapLayerHolder" groups=["GroundLayer"]]
+tile_set = ExtResource("2_q4rjl")
+
+[node name="Objects" type="TileMapLayer" parent="TilemapLayerHolder" groups=["ObjectLayer"]]
+y_sort_enabled = true
+tile_set = ExtResource("2_q4rjl")

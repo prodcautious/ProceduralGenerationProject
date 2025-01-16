@@ -6,9 +6,10 @@ var rock_noise := FastNoiseLite.new()
 var world_size_x : int = 60
 var world_size_y : int = 34
 
-
 @onready var ground_tilemap : TileMapLayer = $Ground
 @onready var object_tilemap : TileMapLayer = $Objects
+
+@export var villager_scene : PackedScene  # Reference to the villager scene
 
 func _ready() -> void:
 	# Setup main terrain noise
@@ -78,5 +79,20 @@ func generateMap() -> void:
 						object_tilemap.set_cell(Vector2i(x, y), 0, Vector2i(0, 1))
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("re-generate"):
-		get_tree().reload_current_scene()
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		var click_position = ground_tilemap.local_to_map(get_global_mouse_position())
+		
+		# Get the tile data at the clicked position (check for ground)
+		var tile_data = ground_tilemap.get_cell_tile_data(click_position)
+		
+		# Ensure the clicked tile is valid for ground placement (not a rock or tree)
+		if tile_data != null:
+			var object_at_position = object_tilemap.get_cell_source_id(click_position)
+			
+			if object_at_position == -1:  # No tree or rock at the position
+				var villager_instance = villager_scene.instantiate()
+				villager_instance.position = ground_tilemap.map_to_local(click_position)
+				get_tree().current_scene.add_child(villager_instance)
+				
+				# Add the villager to the "villagers" group
+				villager_instance.add_to_group("villagers")
