@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdup36fx1mivq"
-path="res://.godot/imported/resurrect-64-1x (2).png-e1cf7892d71ef86fc7b58ba8c0f1ace7.ctex"
+uid="uid://b74vsts8xb755"
+path="res://.godot/imported/default_villager_sprite.png-3b7f0880234c96ed969b204a0f217cbc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/resurrect-64-1x (2).png"
-dest_files=["res://.godot/imported/resurrect-64-1x (2).png-e1cf7892d71ef86fc7b58ba8c0f1ace7.ctex"]
+source_file="res://assets/characters/villagers/default_villager_sprite.png"
+dest_files=["res://.godot/imported/default_villager_sprite.png-3b7f0880234c96ed969b204a0f217cbc.ctex"]
 
 [params]
 

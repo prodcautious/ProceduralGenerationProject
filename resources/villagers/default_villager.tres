@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="VillagerResource" load_steps=3 format=3 uid="uid://dx4utbkkhdn7n"]
+
+[ext_resource type="Script" path="res://resources/villager_resource.gd" id="1_b7cyh"]
+[ext_resource type="Texture2D" uid="uid://b74vsts8xb755" path="res://assets/characters/villagers/default_villager_sprite.png" id="2_rbcg4"]
+
+[resource]
+script = ExtResource("1_b7cyh")
+villager_type = "Default"
+villager_texture = ExtResource("2_rbcg4")
+villager_movement_speed = 75.0
+villager_stamina = 75.0
+villager_initial_stamina = 75.0
+objects_mined = 0
+max_objects_mineable = 3

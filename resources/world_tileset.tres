@@ -1,0 +1,16 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://drkoaldem6o5q"]
+
+[ext_resource type="Texture2D" uid="uid://1c3cetivv4tw" path="res://assets/tileset/tileset.png" id="1_expwr"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vifpo"]
+texture = ExtResource("1_expwr")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+0:1/0/y_sort_origin = 4
+1:1/0 = 0
+1:1/0/y_sort_origin = 4
+
+[resource]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_vifpo")

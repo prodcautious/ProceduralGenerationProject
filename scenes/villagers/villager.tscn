@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://bvb7hdwfsdd5x"]
+
+[ext_resource type="Script" path="res://scripts/villagers/villager.gd" id="1_f43p3"]
+[ext_resource type="Texture2D" uid="uid://dlp5mfelwr5ax" path="res://assets/ui/progress_bar_under.png" id="2_ynby4"]
+[ext_resource type="Texture2D" uid="uid://dhkg5e0ha26hu" path="res://assets/ui/progress_bar_over.png" id="3_0g12t"]
+[ext_resource type="Texture2D" uid="uid://ca80qden3fbdq" path="res://assets/ui/progress_bar_progress_action.png" id="4_ghwcv"]
+[ext_resource type="Texture2D" uid="uid://3cmng8ffiyga" path="res://assets/ui/progress_bar_progress_stamina.png" id="5_0a7xu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jpqww"]
+radius = 15.0
+
+[node name="Villager" type="CharacterBody2D"]
+y_sort_enabled = true
+position = Vector2(0, -4)
+script = ExtResource("1_f43p3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.4, 0.4)
+shape = SubResource("CircleShape2D_jpqww")
+
+[node name="ActionProgressBar" type="TextureProgressBar" parent="."]
+z_index = 5
+custom_minimum_size = Vector2(12, 6)
+offset_left = -6.0
+offset_top = -18.0
+offset_right = 6.0
+offset_bottom = -12.0
+texture_under = ExtResource("2_ynby4")
+texture_over = ExtResource("3_0g12t")
+texture_progress = ExtResource("4_ghwcv")
+
+[node name="StaminaProgressBar" type="TextureProgressBar" parent="."]
+z_index = 5
+custom_minimum_size = Vector2(12, 6)
+offset_left = -6.0
+offset_top = -11.0
+offset_right = 6.0
+offset_bottom = -5.0
+texture_under = ExtResource("2_ynby4")
+texture_over = ExtResource("3_0g12t")
+texture_progress = ExtResource("5_0a7xu")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdup36fx1mivq"
-path="res://.godot/imported/resurrect-64-1x (2).png-e1cf7892d71ef86fc7b58ba8c0f1ace7.ctex"
+uid="uid://dhkg5e0ha26hu"
+path="res://.godot/imported/progress_bar_over.png-8eee5c6539e560e38c73f8443dd01fd3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/resurrect-64-1x (2).png"
-dest_files=["res://.godot/imported/resurrect-64-1x (2).png-e1cf7892d71ef86fc7b58ba8c0f1ace7.ctex"]
+source_file="res://assets/ui/progress_bar_over.png"
+dest_files=["res://.godot/imported/progress_bar_over.png-8eee5c6539e560e38c73f8443dd01fd3.ctex"]
 
 [params]
 

@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://kbmj75le2p4p"]
+
+[ext_resource type="Script" path="res://tilemap_procedural_generation.gd" id="1_7j278"]
+[ext_resource type="TileSet" uid="uid://drkoaldem6o5q" path="res://world_tileset.tres" id="2_1skqv"]
+[ext_resource type="PackedScene" uid="uid://bvb7hdwfsdd5x" path="res://villager.tscn" id="3_2naj1"]
+[ext_resource type="Script" path="res://villager_resource.gd" id="4_3m7no"]
+
+[sub_resource type="Resource" id="Resource_rsyx8"]
+script = ExtResource("4_3m7no")
+villager_type = "Default"
+villager_movement_speed = 75.0
+villager_stamina = 100.0
+
+[node name="World" type="Node2D"]
+
+[node name="TilemapLayerHolder" type="Node2D" parent="."]
+script = ExtResource("1_7j278")
+
+[node name="Ground" type="TileMapLayer" parent="TilemapLayerHolder"]
+tile_set = ExtResource("2_1skqv")
+
+[node name="Objects" type="TileMapLayer" parent="TilemapLayerHolder"]
+z_index = 1
+tile_set = ExtResource("2_1skqv")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_2naj1")]
+villager_resource = SubResource("Resource_rsyx8")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byhrn8y7ft4b4"
-path="res://.godot/imported/tileset.png-c50288acd069fa293d7940a084811264.ctex"
+uid="uid://3cmng8ffiyga"
+path="res://.godot/imported/progress_bar_progress_stamina.png-d4a20fdeec5f04d3487cc80ffba5dc0a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tileset.png"
-dest_files=["res://.godot/imported/tileset.png-c50288acd069fa293d7940a084811264.ctex"]
+source_file="res://assets/ui/progress_bar_progress_stamina.png"
+dest_files=["res://.godot/imported/progress_bar_progress_stamina.png-d4a20fdeec5f04d3487cc80ffba5dc0a.ctex"]
 
 [params]
 
