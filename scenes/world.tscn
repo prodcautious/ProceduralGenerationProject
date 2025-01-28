@@ -1,13 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://kbmj75le2p4p"]
+[gd_scene load_steps=11 format=3 uid="uid://kbmj75le2p4p"]
 
 [ext_resource type="Script" path="res://scripts/procedural_generation/tilemap_procedural_generation.gd" id="1_2fe4s"]
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_gj5j0"]
 [ext_resource type="TileSet" uid="uid://drkoaldem6o5q" path="res://resources/world_tileset.tres" id="2_q4rjl"]
 [ext_resource type="PackedScene" uid="uid://bvb7hdwfsdd5x" path="res://scenes/villagers/villager.tscn" id="3_jemdr"]
 [ext_resource type="Script" path="res://scripts/ui/debug.gd" id="4_5jgie"]
 [ext_resource type="FontFile" uid="uid://cbh2rpe1hbk6x" path="res://assets/fonts/Minecraftia-Regular.ttf" id="5_xfwp0"]
+[ext_resource type="Texture2D" uid="uid://cjcpwkh0ub523" path="res://assets/ui/default_villager_button.png" id="6_da10r"]
+[ext_resource type="Texture2D" uid="uid://c3qp1mg7wtm8g" path="res://assets/ui/farmer_villager_button.png" id="7_u5way"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eyc1r"]
+texture = ExtResource("6_da10r")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1fw12"]
+texture = ExtResource("7_u5way")
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_gj5j0")
 
 [node name="TilemapLayerHolder" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -73,3 +83,40 @@ theme_override_font_sizes/font_size = 16
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_xfwp0")
 theme_override_font_sizes/font_size = 16
+
+[node name="VillagersSocializingLabel" type="Label" parent="UI/Debug/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_xfwp0")
+theme_override_font_sizes/font_size = 16
+
+[node name="VillagerSelectUI" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/VillagerSelectUI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -64.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Button" type="Button" parent="UI/VillagerSelectUI/HBoxContainer"]
+custom_minimum_size = Vector2(64, 128)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_eyc1r")
+
+[node name="Button2" type="Button" parent="UI/VillagerSelectUI/HBoxContainer"]
+custom_minimum_size = Vector2(64, 128)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_1fw12")
